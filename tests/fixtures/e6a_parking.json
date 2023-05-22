@@ -1,0 +1,525 @@
+{
+  "displayFieldName": "ID",
+  "fieldAliases": {
+    "OBJECTID": "OBJECTID",
+    "ID": "ID",
+    "SECTIE_ID": "SECTIE_ID",
+    "SOORT": "SOORT",
+    "STRAAT": "STRAAT",
+    "BUURTCODE": "BUURTCODE",
+    "BUURTNAAM": "BUURTNAAM",
+    "WIJKCODE": "WIJKCODE",
+    "WIJKNAAM": "WIJKNAAM",
+    "REGIME": "REGIME",
+    "RVV_SOORT": "RVV_SOORT",
+    "FISCAAL_GEBIED": "FISCAAL_GEBIED",
+    "BORD": "BORD",
+    "VERGUNNINGSGEBIED": "VERGUNNINGSGEBIED",
+    "GEBIED": "GEBIED",
+    "SHAPE.STArea()": "SHAPE.STArea()",
+    "SHAPE.STLength()": "SHAPE.STLength()"
+  },
+  "geometryType": "esriGeometryPolygon",
+  "spatialReference": {
+    "wkid": 4326,
+    "latestWkid": 4326
+  },
+  "fields": [
+    {
+      "name": "OBJECTID",
+      "type": "esriFieldTypeOID",
+      "alias": "OBJECTID"
+    },
+    {
+      "name": "ID",
+      "type": "esriFieldTypeInteger",
+      "alias": "ID"
+    },
+    {
+      "name": "SECTIE_ID",
+      "type": "esriFieldTypeInteger",
+      "alias": "SECTIE_ID"
+    },
+    {
+      "name": "SOORT",
+      "type": "esriFieldTypeString",
+      "alias": "SOORT",
+      "length": 40
+    },
+    {
+      "name": "STRAAT",
+      "type": "esriFieldTypeString",
+      "alias": "STRAAT",
+      "length": 60
+    },
+    {
+      "name": "BUURTCODE",
+      "type": "esriFieldTypeString",
+      "alias": "BUURTCODE",
+      "length": 20
+    },
+    {
+      "name": "BUURTNAAM",
+      "type": "esriFieldTypeString",
+      "alias": "BUURTNAAM",
+      "length": 50
+    },
+    {
+      "name": "WIJKCODE",
+      "type": "esriFieldTypeString",
+      "alias": "WIJKCODE",
+      "length": 20
+    },
+    {
+      "name": "WIJKNAAM",
+      "type": "esriFieldTypeString",
+      "alias": "WIJKNAAM",
+      "length": 60
+    },
+    {
+      "name": "REGIME",
+      "type": "esriFieldTypeString",
+      "alias": "REGIME",
+      "length": 50
+    },
+    {
+      "name": "RVV_SOORT",
+      "type": "esriFieldTypeString",
+      "alias": "RVV_SOORT",
+      "length": 45
+    },
+    {
+      "name": "FISCAAL_GEBIED",
+      "type": "esriFieldTypeString",
+      "alias": "FISCAAL_GEBIED",
+      "length": 60
+    },
+    {
+      "name": "BORD",
+      "type": "esriFieldTypeString",
+      "alias": "BORD",
+      "length": 120
+    },
+    {
+      "name": "VERGUNNINGSGEBIED",
+      "type": "esriFieldTypeString",
+      "alias": "VERGUNNINGSGEBIED",
+      "length": 50
+    },
+    {
+      "name": "GEBIED",
+      "type": "esriFieldTypeString",
+      "alias": "GEBIED",
+      "length": 60
+    },
+    {
+      "name": "SHAPE.STArea()",
+      "type": "esriFieldTypeDouble",
+      "alias": "SHAPE.STArea()"
+    },
+    {
+      "name": "SHAPE.STLength()",
+      "type": "esriFieldTypeDouble",
+      "alias": "SHAPE.STLength()"
+    }
+  ],
+  "features": [
+    {
+      "attributes": {
+        "OBJECTID": 96,
+        "ID": 100077,
+        "SECTIE_ID": null,
+        "SOORT": "bijzonder",
+        "STRAAT": "G.A. van Nispenstraat",
+        "BUURTCODE": "BU02021261",
+        "BUURTNAAM": "Burgemeesterswijk",
+        "WIJKCODE": "WK020212",
+        "WIJKNAAM": null,
+        "REGIME": "Ongereguleerd",
+        "RVV_SOORT": "E6a",
+        "FISCAAL_GEBIED": null,
+        "BORD": null,
+        "VERGUNNINGSGEBIED": null,
+        "GEBIED": "Sector C Burgermeesterkwartier",
+        "SHAPE.STArea()": 10.726566954999999,
+        "SHAPE.STLength()": 13.685782982611673
+      },
+      "geometry": {
+        "rings": [
+          [
+            [5.8944369743545391, 51.991877507180675],
+            [5.8944296174053337, 51.991876221207356],
+            [5.8943937540118041, 51.991869509621949],
+            [5.894378463265797, 51.991866654326714],
+            [5.8943782222512642, 51.99186658525656],
+            [5.8943779755249963, 51.991866526098256],
+            [5.894377723107441, 51.991866478649314],
+            [5.8943774649883185, 51.991866442010974],
+            [5.8943772026337671, 51.991866417075748],
+            [5.8943769389453307, 51.991866402932288],
+            [5.8943766739434, 51.991866401378168],
+            [5.8943764090634998, 51.991866410609568],
+            [5.8943761472173897, 51.991866430613861],
+            [5.8943758869695024, 51.991866463195002],
+            [5.8943756312113225, 51.991866506542777],
+            [5.8943753813987056, 51.991866560650934],
+            [5.8943751389875638, 51.991866625513161],
+            [5.8943749039778979, 51.991866701129581],
+            [5.8943746792610829, 51.991866785689922],
+            [5.8943744634016566, 51.991866880998103],
+            [5.894374259290994, 51.991866985244023],
+            [5.8943740683748373, 51.991867097522523],
+            [5.8943738892074444, 51.991867218738712],
+            [5.8943737261259894, 51.991867346177472],
+            [5.894373577694954, 51.991867481642537],
+            [5.8943734438838291, 51.991867622437589],
+            [5.8943733276042796, 51.991867768550108],
+            [5.8943732288564643, 51.991867919980002],
+            [5.8943731461640274, 51.99186807493605],
+            [5.8943730824387917, 51.991868233405704],
+            [5.8943730376706434, 51.991868394490098],
+            [5.8943644041116974, 51.991886563901062],
+            [5.8944275809293973, 51.991898003360305],
+            [5.8944369743545391, 51.991877507180675]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes": {
+        "OBJECTID": 105,
+        "ID": 108123,
+        "SECTIE_ID": null,
+        "SOORT": "bijzonder",
+        "STRAAT": "Coehoornstraat",
+        "BUURTCODE": "BU02020104",
+        "BUURTNAAM": "Stationsplein",
+        "WIJKCODE": "WK020201",
+        "WIJKNAAM": null,
+        "REGIME": "Mengvorm",
+        "RVV_SOORT": "E6a",
+        "FISCAAL_GEBIED": "26001",
+        "BORD": null,
+        "VERGUNNINGSGEBIED": "Sector A",
+        "GEBIED": "26001",
+        "SHAPE.STArea()": 9.3359555350000001,
+        "SHAPE.STLength()": 15.703308317465705
+      },
+      "geometry": {
+        "rings": [
+          [
+            [5.901505793265879, 51.982848223991901],
+            [5.901529780627893, 51.982852997102661],
+            [5.9015350715244921, 51.982843693492526],
+            [5.901551042852021, 51.982814357574696],
+            [5.9015403616540221, 51.982796885967183],
+            [5.9015391189119732, 51.982791336596108],
+            [5.901505793265879, 51.982848223991901]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes": {
+        "OBJECTID": 300,
+        "ID": 108451,
+        "SECTIE_ID": null,
+        "SOORT": "bijzonder",
+        "STRAAT": "Van Lawick van Pabststraat",
+        "BUURTCODE": "BU02021261",
+        "BUURTNAAM": "Burgemeesterswijk",
+        "WIJKCODE": "WK020212",
+        "WIJKNAAM": null,
+        "REGIME": "Vergunninghouders/blauw",
+        "RVV_SOORT": "E6a",
+        "FISCAAL_GEBIED": null,
+        "BORD": null,
+        "VERGUNNINGSGEBIED": "Sector C",
+        "GEBIED": "Sector C Burgermeesterkwartier",
+        "SHAPE.STArea()": 19.002238514999998,
+        "SHAPE.STLength()": 17.64636881535241
+      },
+      "geometry": {
+        "rings": [
+          [
+            [5.8938958363350862, 51.989776954115861],
+            [5.8938537769727093, 51.989739324876886],
+            [5.8938091551427387, 51.989758237963656],
+            [5.8938508877761047, 51.989796072661008],
+            [5.8938958363350862, 51.989776954115861]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes": {
+        "OBJECTID": 309,
+        "ID": 106970,
+        "SECTIE_ID": null,
+        "SOORT": "bijzonder",
+        "STRAAT": "Nieuwe Plein",
+        "BUURTCODE": "BU02020102",
+        "BUURTNAAM": "Rijnstraat",
+        "WIJKCODE": "WK020201",
+        "WIJKNAAM": null,
+        "REGIME": "Mengvorm",
+        "RVV_SOORT": "E6a",
+        "FISCAAL_GEBIED": "26001",
+        "BORD": null,
+        "VERGUNNINGSGEBIED": "Sector A",
+        "GEBIED": "26001",
+        "SHAPE.STArea()": 14.787291290000001,
+        "SHAPE.STLength()": 15.449361339799589
+      },
+      "geometry": {
+        "rings": [
+          [
+            [5.9027661173641048, 51.981544037872425],
+            [5.9027489041998278, 51.981507540574846],
+            [5.9026998824497365, 51.981516466919238],
+            [5.9027173223529079, 51.981552811326949],
+            [5.9027661173641048, 51.981544037872425]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes": {
+        "OBJECTID": 756,
+        "ID": 108450,
+        "SECTIE_ID": null,
+        "SOORT": "bijzonder",
+        "STRAAT": "Van Lawick van Pabststraat",
+        "BUURTCODE": "BU02021261",
+        "BUURTNAAM": "Burgemeesterswijk",
+        "WIJKCODE": "WK020212",
+        "WIJKNAAM": null,
+        "REGIME": "Vergunninghouders/blauw",
+        "RVV_SOORT": "E6a",
+        "FISCAAL_GEBIED": null,
+        "BORD": null,
+        "VERGUNNINGSGEBIED": "Sector C",
+        "GEBIED": "Sector C Burgermeesterkwartier",
+        "SHAPE.STArea()": 19.396894379999999,
+        "SHAPE.STLength()": 17.798409096786809
+      },
+      "geometry": {
+        "rings": [
+          [
+            [5.8938537769727093, 51.989739324876886],
+            [5.8938958363350862, 51.989776954115861],
+            [5.8939415817768142, 51.989757497754603],
+            [5.8939361355418303, 51.989752625260806],
+            [5.8939156698923938, 51.989734316062624],
+            [5.8938995724001471, 51.989719913258341],
+            [5.8938537769727093, 51.989739324876886]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes": {
+        "OBJECTID": 807,
+        "ID": 106436,
+        "SECTIE_ID": null,
+        "SOORT": "bijzonder",
+        "STRAAT": "Oude Kraan",
+        "BUURTCODE": "BU02020170",
+        "BUURTNAAM": "Utrechtsestraat",
+        "WIJKCODE": "WK020201",
+        "WIJKNAAM": null,
+        "REGIME": "Mengvorm",
+        "RVV_SOORT": "E6a",
+        "FISCAAL_GEBIED": "26001",
+        "BORD": null,
+        "VERGUNNINGSGEBIED": "Sector A",
+        "GEBIED": "26001",
+        "SHAPE.STArea()": 13.20994061,
+        "SHAPE.STLength()": 19.368790937769059
+      },
+      "geometry": {
+        "rings": [
+          [
+            [5.8989275885310493, 51.98239198624151],
+            [5.8989397503465142, 51.982407023891433],
+            [5.899049077518848, 51.982373268005063],
+            [5.8990446171001247, 51.982374006479475],
+            [5.8990398989735926, 51.982373847239302],
+            [5.8990066969632773, 51.982367591975049],
+            [5.8989275885310493, 51.98239198624151]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes": {
+        "OBJECTID": 1170,
+        "ID": 108096,
+        "SECTIE_ID": null,
+        "SOORT": "bijzonder",
+        "STRAAT": "Stationsplein",
+        "BUURTCODE": "BU02020170",
+        "BUURTNAAM": "Utrechtsestraat",
+        "WIJKCODE": "WK020201",
+        "WIJKNAAM": null,
+        "REGIME": "Mengvorm",
+        "RVV_SOORT": "E6a",
+        "FISCAAL_GEBIED": "26001",
+        "BORD": null,
+        "VERGUNNINGSGEBIED": "Sector A",
+        "GEBIED": "26001",
+        "SHAPE.STArea()": 22.658873225000001,
+        "SHAPE.STLength()": 24.496069235905207
+      },
+      "geometry": {
+        "rings": [
+          [
+            [5.8990329497634306, 51.983890405283162],
+            [5.899068282607165, 51.98388658790644],
+            [5.899061386392674, 51.983862309806625],
+            [5.8990417777307513, 51.983793284564243],
+            [5.8990415795245763, 51.98379377439305],
+            [5.8990413317348533, 51.983794256347998],
+            [5.8990410372420445, 51.983794727720174],
+            [5.8990406974812242, 51.983795186705599],
+            [5.8990403124420805, 51.983795632405389],
+            [5.8990398835598477, 51.983796063015809],
+            [5.8990394122694916, 51.983796476732849],
+            [5.899016052760941, 51.983817269550052],
+            [5.8990155202632737, 51.983817804875983],
+            [5.8990150535252415, 51.98381836238682],
+            [5.8990146510604182, 51.98381893939235],
+            [5.899014318650261, 51.983819532272157],
+            [5.8990140548083421, 51.983820138336206],
+            [5.8990138638708407, 51.983820754869107],
+            [5.8990137457966663, 51.983821378275692],
+            [5.8990137005550443, 51.983822005859651],
+            [5.8990137280947392, 51.983822633126948],
+            [5.8990138283849163, 51.983823257381246],
+            [5.8990140028504578, 51.983823875919832],
+            [5.8990260407027506, 51.983866147910391],
+            [5.8990329497634306, 51.983890405283162]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes": {
+        "OBJECTID": 1305,
+        "ID": 108097,
+        "SECTIE_ID": null,
+        "SOORT": "bijzonder",
+        "STRAAT": "Stationsplein",
+        "BUURTCODE": "BU02020170",
+        "BUURTNAAM": "Utrechtsestraat",
+        "WIJKCODE": "WK020201",
+        "WIJKNAAM": null,
+        "REGIME": "Mengvorm",
+        "RVV_SOORT": "E6a",
+        "FISCAAL_GEBIED": "26001",
+        "BORD": null,
+        "VERGUNNINGSGEBIED": "Sector A",
+        "GEBIED": "26001",
+        "SHAPE.STArea()": 21.515825509999999,
+        "SHAPE.STLength()": 23.67948185253227
+      },
+      "geometry": {
+        "rings": [
+          [
+            [5.899068282607165, 51.98388658790644],
+            [5.8990329497634306, 51.983890405283162],
+            [5.8990344450311847, 51.983895656964833],
+            [5.8990392769450875, 51.983912146650212],
+            [5.8990513794878119, 51.983953450310509],
+            [5.8990515730725024, 51.983954085843735],
+            [5.899051834958903, 51.983954711192574],
+            [5.8990521665822078, 51.983955324553165],
+            [5.8990525635446733, 51.983955923248097],
+            [5.8990530258053164, 51.983956503682272],
+            [5.8990535504220514, 51.983957063171907],
+            [5.8990541359187594, 51.983957599925773],
+            [5.899054779343146, 51.983958110361414],
+            [5.8990554777634356, 51.98395859269381],
+            [5.8990562268024611, 51.983959046043267],
+            [5.8990570234976651, 51.983959465928507],
+            [5.8990900433925155, 51.98397389238287],
+            [5.8990906538995569, 51.983974197128155],
+            [5.8990912413012531, 51.983974518153097],
+            [5.89909180415221, 51.983974856362678],
+            [5.8990923409761953, 51.98397520996572],
+            [5.8990928503074604, 51.983975578069767],
+            [5.89909333214589, 51.98397596067479],
+            [5.899093783569973, 51.983976356894637],
+            [5.899074428045405, 51.983908219505608],
+            [5.899068282607165, 51.98388658790644]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes": {
+        "OBJECTID": 1367,
+        "ID": 106159,
+        "SECTIE_ID": null,
+        "SOORT": "bijzonder",
+        "STRAAT": "Rijnkade",
+        "BUURTCODE": "BU02020104",
+        "BUURTNAAM": "Stationsplein",
+        "WIJKCODE": "WK020201",
+        "WIJKNAAM": null,
+        "REGIME": "Mengvorm",
+        "RVV_SOORT": "E6a",
+        "FISCAAL_GEBIED": "26001",
+        "BORD": null,
+        "VERGUNNINGSGEBIED": "Sector A",
+        "GEBIED": "26001",
+        "SHAPE.STArea()": 18.601817534999999,
+        "SHAPE.STLength()": 19.278517977053124
+      },
+      "geometry": {
+        "rings": [
+          [
+            [5.900772747190894, 51.979969718430887],
+            [5.9007027686454547, 51.97992405026028],
+            [5.9006747165143789, 51.979941052850222],
+            [5.9007448644870379, 51.979986009318495],
+            [5.900772747190894, 51.979969718430887]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes": {
+        "OBJECTID": 2219,
+        "ID": 108689,
+        "SECTIE_ID": null,
+        "SOORT": "bijzonder",
+        "STRAAT": "Nieuwe Plein",
+        "BUURTCODE": "BU02020102",
+        "BUURTNAAM": "Rijnstraat",
+        "WIJKCODE": "WK020201",
+        "WIJKNAAM": null,
+        "REGIME": "Mengvorm",
+        "RVV_SOORT": "E6a",
+        "FISCAAL_GEBIED": "26001",
+        "BORD": null,
+        "VERGUNNINGSGEBIED": "Sector A",
+        "GEBIED": "26001",
+        "SHAPE.STArea()": 14.2244121,
+        "SHAPE.STLength()": 15.186010976723718
+      },
+      "geometry": {
+        "rings": [
+          [
+            [5.9029152260286208, 51.981410162421923],
+            [5.9029329130340127, 51.981446591104849],
+            [5.9029799182980032, 51.981437889224594],
+            [5.9029619669067905, 51.981401510244858],
+            [5.9029152260286208, 51.981410162421923]
+          ]
+        ]
+      }
+    }
+  ],
+  "exceededTransferLimit": true
+}

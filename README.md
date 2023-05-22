@@ -48,7 +48,7 @@ You can read the following datasets with this package:
 You can use the following parameters in your request:
 
 - **limit** (default: 10) - How many results you want to retrieve.
-- **filter** (default: 1=1) - The filter you want to use to filter the results.
+- **set_filter** (default: 1=1) - The filter you want to use to filter the results.
 
 You get the following output data back with this python package:
 

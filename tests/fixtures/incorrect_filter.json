@@ -1,0 +1,127 @@
+{
+  "displayFieldName": "ID",
+  "fieldAliases": {
+    "OBJECTID": "OBJECTID",
+    "ID": "ID",
+    "SECTIE_ID": "SECTIE_ID",
+    "SOORT": "SOORT",
+    "STRAAT": "STRAAT",
+    "BUURTCODE": "BUURTCODE",
+    "BUURTNAAM": "BUURTNAAM",
+    "WIJKCODE": "WIJKCODE",
+    "WIJKNAAM": "WIJKNAAM",
+    "REGIME": "REGIME",
+    "RVV_SOORT": "RVV_SOORT",
+    "FISCAAL_GEBIED": "FISCAAL_GEBIED",
+    "BORD": "BORD",
+    "VERGUNNINGSGEBIED": "VERGUNNINGSGEBIED",
+    "GEBIED": "GEBIED",
+    "SHAPE.STArea()": "SHAPE.STArea()",
+    "SHAPE.STLength()": "SHAPE.STLength()"
+  },
+  "geometryType": "esriGeometryPolygon",
+  "spatialReference": {
+    "wkid": 4326,
+    "latestWkid": 4326
+  },
+  "fields": [
+    {
+      "name": "OBJECTID",
+      "type": "esriFieldTypeOID",
+      "alias": "OBJECTID"
+    },
+    {
+      "name": "ID",
+      "type": "esriFieldTypeInteger",
+      "alias": "ID"
+    },
+    {
+      "name": "SECTIE_ID",
+      "type": "esriFieldTypeInteger",
+      "alias": "SECTIE_ID"
+    },
+    {
+      "name": "SOORT",
+      "type": "esriFieldTypeString",
+      "alias": "SOORT",
+      "length": 40
+    },
+    {
+      "name": "STRAAT",
+      "type": "esriFieldTypeString",
+      "alias": "STRAAT",
+      "length": 60
+    },
+    {
+      "name": "BUURTCODE",
+      "type": "esriFieldTypeString",
+      "alias": "BUURTCODE",
+      "length": 20
+    },
+    {
+      "name": "BUURTNAAM",
+      "type": "esriFieldTypeString",
+      "alias": "BUURTNAAM",
+      "length": 50
+    },
+    {
+      "name": "WIJKCODE",
+      "type": "esriFieldTypeString",
+      "alias": "WIJKCODE",
+      "length": 20
+    },
+    {
+      "name": "WIJKNAAM",
+      "type": "esriFieldTypeString",
+      "alias": "WIJKNAAM",
+      "length": 60
+    },
+    {
+      "name": "REGIME",
+      "type": "esriFieldTypeString",
+      "alias": "REGIME",
+      "length": 50
+    },
+    {
+      "name": "RVV_SOORT",
+      "type": "esriFieldTypeString",
+      "alias": "RVV_SOORT",
+      "length": 45
+    },
+    {
+      "name": "FISCAAL_GEBIED",
+      "type": "esriFieldTypeString",
+      "alias": "FISCAAL_GEBIED",
+      "length": 60
+    },
+    {
+      "name": "BORD",
+      "type": "esriFieldTypeString",
+      "alias": "BORD",
+      "length": 120
+    },
+    {
+      "name": "VERGUNNINGSGEBIED",
+      "type": "esriFieldTypeString",
+      "alias": "VERGUNNINGSGEBIED",
+      "length": 50
+    },
+    {
+      "name": "GEBIED",
+      "type": "esriFieldTypeString",
+      "alias": "GEBIED",
+      "length": 60
+    },
+    {
+      "name": "SHAPE.STArea()",
+      "type": "esriFieldTypeDouble",
+      "alias": "SHAPE.STArea()"
+    },
+    {
+      "name": "SHAPE.STLength()",
+      "type": "esriFieldTypeDouble",
+      "alias": "SHAPE.STLength()"
+    }
+  ],
+  "features": []
+}
