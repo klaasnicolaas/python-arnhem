@@ -77,7 +77,7 @@ from arnhem import ODPArnhem
 async def main() -> None:
     """Show example on using the Open Data Platform API of Arnhem."""
     async with ODPArnhem() as client:
-        locations = await client.locations(limit=100, filter="RVV_SOORT='E6a'")
+        locations = await client.locations(limit=100, set_filter="RVV_SOORT='E6a'")
         print(locations)
 
 
@@ -191,7 +191,7 @@ SOFTWARE.
 [license-shield]: https://img.shields.io/github/license/klaasnicolaas/python-arnhem.svg
 [last-commit-shield]: https://img.shields.io/github/last-commit/klaasnicolaas/python-arnhem.svg
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2023.svg
-[maintainability-shield]: https://api.codeclimate.com/v1/badges/c577da6bb1b3bb6553bd/maintainability
+[maintainability-shield]: https://api.codeclimate.com/v1/badges/7ab53cfceaae236cca3f/maintainability
 [maintainability-url]: https://codeclimate.com/github/klaasnicolaas/python-arnhem/maintainability
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg
 [pypi]: https://pypi.org/project/arnhem/
