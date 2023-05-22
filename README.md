@@ -182,7 +182,7 @@ SOFTWARE.
 [code-quality]: https://github.com/klaasnicolaas/python-arnhem/actions/workflows/codeql.yaml
 [commits-shield]: https://img.shields.io/github/commit-activity/y/klaasnicolaas/python-arnhem.svg
 [commits-url]: https://github.com/klaasnicolaas/python-arnhem/commits/main
-[codecov-shield]: https://codecov.io/gh/klaasnicolaas/python-arnhem/branch/main/graph/badge.svg?token=4AMI23ZT7C
+[codecov-shield]: https://codecov.io/gh/klaasnicolaas/python-arnhem/branch/main/graph/badge.svg?token=36L7D2UU9M
 [codecov-url]: https://codecov.io/gh/klaasnicolaas/python-arnhem
 [downloads-shield]: https://img.shields.io/pypi/dm/arnhem
 [downloads-url]: https://pypistats.org/packages/arnhem
