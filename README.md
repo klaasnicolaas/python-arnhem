@@ -14,10 +14,8 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 
-[![Code Quality][code-quality-shield]][code-quality]
 [![Build Status][build-shield]][build-url]
 [![Typing Status][typing-shield]][typing-url]
-
 [![Maintainability][maintainability-shield]][maintainability-url]
 [![Code Coverage][codecov-shield]][codecov-url]
 
@@ -178,8 +176,6 @@ SOFTWARE.
 <!-- MARKDOWN LINKS & IMAGES -->
 [build-shield]: https://github.com/klaasnicolaas/python-arnhem/actions/workflows/tests.yaml/badge.svg
 [build-url]: https://github.com/klaasnicolaas/python-arnhem/actions/workflows/tests.yaml
-[code-quality-shield]: https://github.com/klaasnicolaas/python-arnhem/actions/workflows/codeql.yaml/badge.svg
-[code-quality]: https://github.com/klaasnicolaas/python-arnhem/actions/workflows/codeql.yaml
 [commits-shield]: https://img.shields.io/github/commit-activity/y/klaasnicolaas/python-arnhem.svg
 [commits-url]: https://github.com/klaasnicolaas/python-arnhem/commits/main
 [codecov-shield]: https://codecov.io/gh/klaasnicolaas/python-arnhem/branch/main/graph/badge.svg?token=36L7D2UU9M
