@@ -55,7 +55,7 @@ You get the following output data back with this python package:
 | Variable | Type | Description |
 | :------- | :--- | :---------- |
 | `spot_id` | string | The id of the parking spot |
-| `type` | string | The type of parking spot |
+| `parking_type` | string | The type of parking spot |
 | `street` | string | The street where the parking spot is located |
 | `traffic_sign` | string | The traffic sign at the parking spot |
 | `neighborhood` | string | The neighborhood where the parking spot is located |
@@ -193,7 +193,7 @@ SOFTWARE.
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2023.svg
 [maintainability-shield]: https://api.codeclimate.com/v1/badges/c577da6bb1b3bb6553bd/maintainability
 [maintainability-url]: https://codeclimate.com/github/klaasnicolaas/python-arnhem/maintainability
-[project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
+[project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg
 [pypi]: https://pypi.org/project/arnhem/
 [python-versions-shield]: https://img.shields.io/pypi/pyversions/arnhem
 [typing-shield]: https://github.com/klaasnicolaas/python-arnhem/actions/workflows/typing.yaml/badge.svg
