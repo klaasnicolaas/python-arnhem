@@ -22,7 +22,7 @@ classifiers = [
   "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 packages = [
-  { include = "arnhem" }
+  { include = "arnhem", from = "src"},
 ]
 
 [tool.poetry.scripts]
