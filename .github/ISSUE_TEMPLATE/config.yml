@@ -1,5 +1,5 @@
 blank_issues_enabled: true
 contact_links:
-  - name: ❓ I have a question
+  - name: ❓ Ask a Question
     url: https://github.com/klaasnicolaas/python-arnhem/discussions/new
     about: We use GitHub issues for tracking bugs / feature requests, check discussions for questions.
