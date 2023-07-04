@@ -116,7 +116,6 @@ class ODPArnhem:
             A list of ParkingSpot objects.
         """
         msg: str = "No results found, check your filter."
-        results: list[ParkingSpot] = []
         locations = await self._request(
             "OpenData/Parkeervakken/MapServer/0/query",
             params={
@@ -129,8 +128,9 @@ class ODPArnhem:
         )
 
         try:
-            for item in locations["features"]:
-                results.append(ParkingSpot.from_json(item))
+            results: list[ParkingSpot] = [
+                ParkingSpot.from_json(item) for item in locations["features"]
+            ]
         except KeyError as exception:
             # when wrong filter is given
             raise ODPArnhemNoResultsError(msg) from exception

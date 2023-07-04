@@ -9,21 +9,17 @@ from arnhem import ODPArnhem
 async def main() -> None:
     """Show example on using the ODP Arnhem API client."""
     async with ODPArnhem() as client:
-        count: int
-
         locations = await client.locations(
             limit=100,
             set_filter="RVV_SOORT='E6a'",
         )
 
-        for index, item in enumerate(locations, 1):
-            count = index
+        count: int = len(locations)
+        for item in locations:
             print(item)
 
         # Count unique id's in disabled_parkings
-        unique_values: list[int] = []
-        for location in locations:
-            unique_values.append(location.spot_id)
+        unique_values: list[str] = [str(item.spot_id) for item in locations]
         num_values = len(set(unique_values))
 
         print("__________________________")
