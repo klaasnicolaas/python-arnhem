@@ -5,7 +5,7 @@ import asyncio
 import socket
 from dataclasses import dataclass
 from importlib import metadata
-from typing import Any, cast
+from typing import TYPE_CHECKING, Any, cast
 
 import async_timeout
 from aiohttp import ClientError, ClientSession
@@ -18,6 +18,9 @@ from .exceptions import (
     ODPArnhemNoResultsError,
 )
 from .models import ParkingSpot
+
+if TYPE_CHECKING:
+    from typing_extensions import Self
 
 
 @dataclass
@@ -145,7 +148,7 @@ class ODPArnhem:
         if self.session and self._close_session:
             await self.session.close()
 
-    async def __aenter__(self) -> ODPArnhem:
+    async def __aenter__(self) -> Self:
         """Async enter.
 
         Returns
@@ -154,7 +157,7 @@ class ODPArnhem:
         """
         return self
 
-    async def __aexit__(self, *_exc_info: Any) -> None:
+    async def __aexit__(self, *_exc_info: object) -> None:
         """Async exit.
 
         Args:
