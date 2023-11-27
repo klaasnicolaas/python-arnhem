@@ -5,9 +5,8 @@ import asyncio
 import socket
 from dataclasses import dataclass
 from importlib import metadata
-from typing import TYPE_CHECKING, Any, cast
+from typing import Any, Self, cast
 
-import async_timeout
 from aiohttp import ClientError, ClientSession
 from aiohttp.hdrs import METH_GET
 from yarl import URL
@@ -18,9 +17,6 @@ from .exceptions import (
     ODPArnhemNoResultsError,
 )
 from .models import ParkingSpot
-
-if TYPE_CHECKING:
-    from typing_extensions import Self
 
 
 @dataclass
@@ -78,7 +74,7 @@ class ODPArnhem:
             self._close_session = True
 
         try:
-            async with async_timeout.timeout(self.request_timeout):
+            async with asyncio.timeout(self.request_timeout):
                 response = await self.session.request(
                     method,
                     url,
