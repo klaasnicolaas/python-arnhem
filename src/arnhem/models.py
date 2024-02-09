@@ -33,6 +33,7 @@ class ParkingSpot:
         Returns:
         -------
             A ParkingSpot object.
+
         """
         attr = data["attributes"]
         geo = data["geometry"].get("rings")[0]
