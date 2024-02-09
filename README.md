@@ -154,7 +154,7 @@ poetry run pytest
 
 MIT License
 
-Copyright (c) 2023 Klaas Schoute
+Copyright (c) 2023-2024 Klaas Schoute
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -191,7 +191,7 @@ SOFTWARE.
 [downloads-url]: https://pypistats.org/packages/arnhem
 [license-shield]: https://img.shields.io/github/license/klaasnicolaas/python-arnhem.svg
 [last-commit-shield]: https://img.shields.io/github/last-commit/klaasnicolaas/python-arnhem.svg
-[maintenance-shield]: https://img.shields.io/maintenance/yes/2023.svg
+[maintenance-shield]: https://img.shields.io/maintenance/yes/2024.svg
 [maintainability-shield]: https://api.codeclimate.com/v1/badges/7ab53cfceaae236cca3f/maintainability
 [maintainability-url]: https://codeclimate.com/github/klaasnicolaas/python-arnhem/maintainability
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg
