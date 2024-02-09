@@ -54,6 +54,7 @@ class ODPArnhem:
                 communicating with the Open Data Platform API of Arnhem.
             ODPArnhemError: Received an unexpected response from
                 the Open Data Platform API of Arnhem.
+
         """
         version = metadata.version(__package__)
         url = URL.build(
@@ -113,6 +114,7 @@ class ODPArnhem:
         Returns:
         -------
             A list of ParkingSpot objects.
+
         """
         msg: str = "No results found, check your filter."
         locations = await self._request(
@@ -150,6 +152,7 @@ class ODPArnhem:
         Returns
         -------
             The Open Data Platform Arnhem object.
+
         """
         return self
 
@@ -159,5 +162,6 @@ class ODPArnhem:
         Args:
         ----
             _exc_info: Exec type.
+
         """
         await self.close()
