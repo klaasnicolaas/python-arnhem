@@ -1,4 +1,5 @@
 """Asynchronous Python client for the Open Data Platform API of Arnhem."""
+
 from pathlib import Path
 
 
