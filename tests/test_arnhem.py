@@ -14,7 +14,10 @@ from arnhem.exceptions import ODPArnhemConnectionError, ODPArnhemError
 from . import load_fixtures
 
 
-async def test_json_request(aresponses: ResponsesMockServer) -> None:
+async def test_json_request(
+    aresponses: ResponsesMockServer,
+    odp_arnhem_client: ODPArnhem,
+) -> None:
     """Test JSON response is handled correctly."""
     aresponses.add(
         "geo.arnhem.nl",
@@ -26,11 +29,9 @@ async def test_json_request(aresponses: ResponsesMockServer) -> None:
             text=load_fixtures("e6a_parking.json"),
         ),
     )
-    async with ClientSession() as session:
-        client = ODPArnhem(session=session)
-        response = await client._request("test")
-        assert response is not None
-        await client.close()
+    response = await odp_arnhem_client._request("test")
+    assert response is not None
+    await odp_arnhem_client.close()
 
 
 async def test_internal_session(aresponses: ResponsesMockServer) -> None:
@@ -73,7 +74,10 @@ async def test_timeout(aresponses: ResponsesMockServer) -> None:
             assert await client._request("test")
 
 
-async def test_content_type(aresponses: ResponsesMockServer) -> None:
+async def test_content_type(
+    aresponses: ResponsesMockServer,
+    odp_arnhem_client: ODPArnhem,
+) -> None:
     """Test request content type error is handled correctly."""
     aresponses.add(
         "geo.arnhem.nl",
@@ -84,11 +88,8 @@ async def test_content_type(aresponses: ResponsesMockServer) -> None:
             headers={"Content-Type": "blabla/blabla"},
         ),
     )
-
-    async with ClientSession() as session:
-        client = ODPArnhem(session=session)
-        with pytest.raises(ODPArnhemError):
-            assert await client._request("test")
+    with pytest.raises(ODPArnhemError):
+        assert await odp_arnhem_client._request("test")
 
 
 async def test_client_error() -> None:
