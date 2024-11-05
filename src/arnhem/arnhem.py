@@ -19,6 +19,8 @@ from .exceptions import (
 )
 from .models import ParkingSpot
 
+VERSION = metadata.version(__package__)
+
 
 @dataclass
 class ODPArnhem:
@@ -57,7 +59,6 @@ class ODPArnhem:
                 the Open Data Platform API of Arnhem.
 
         """
-        version = metadata.version(__package__)
         url = URL.build(
             scheme="https",
             host="geo.arnhem.nl",
@@ -68,7 +69,7 @@ class ODPArnhem:
 
         headers = {
             "Accept": "application/json",
-            "User-Agent": f"PythonODPArnhem/{version}",
+            "User-Agent": f"PythonODPArnhem/{VERSION}",
         }
 
         if self.session is None:
