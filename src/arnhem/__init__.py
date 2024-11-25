@@ -10,8 +10,8 @@ from .models import ParkingSpot
 
 __all__ = [
     "ODPArnhem",
-    "ODPArnhemNoResultsError",
     "ODPArnhemConnectionError",
     "ODPArnhemError",
+    "ODPArnhemNoResultsError",
     "ParkingSpot",
 ]
