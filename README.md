@@ -15,7 +15,6 @@
 
 [![Build Status][build-shield]][build-url]
 [![Typing Status][typing-shield]][typing-url]
-[![Maintainability][maintainability-shield]][maintainability-url]
 [![Code Coverage][codecov-shield]][codecov-url]
 
 
@@ -196,8 +195,6 @@ SOFTWARE.
 [license-shield]: https://img.shields.io/github/license/klaasnicolaas/python-arnhem.svg
 [last-commit-shield]: https://img.shields.io/github/last-commit/klaasnicolaas/python-arnhem.svg
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2025.svg
-[maintainability-shield]: https://api.codeclimate.com/v1/badges/7ab53cfceaae236cca3f/maintainability
-[maintainability-url]: https://codeclimate.com/github/klaasnicolaas/python-arnhem/maintainability
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg
 [pypi]: https://pypi.org/project/arnhem/
 [python-versions-shield]: https://img.shields.io/pypi/pyversions/arnhem
