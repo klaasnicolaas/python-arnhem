@@ -19,7 +19,7 @@ from .exceptions import (
 )
 from .models import ParkingSpot
 
-VERSION: str = metadata.version(__package__)  # ty:ignore[invalid-argument-type]
+VERSION: str = metadata.version("arnhem")
 
 
 @dataclass
