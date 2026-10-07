@@ -6,12 +6,14 @@ from .exceptions import (
     ODPArnhemError,
     ODPArnhemNoResultsError,
 )
-from .models import ParkingSpot
+from .models import ParkingCollection, ParkingRecord, ParkingSpot
 
 __all__ = [
     "ODPArnhem",
     "ODPArnhemConnectionError",
     "ODPArnhemError",
     "ODPArnhemNoResultsError",
+    "ParkingCollection",
+    "ParkingRecord",
     "ParkingSpot",
 ]
