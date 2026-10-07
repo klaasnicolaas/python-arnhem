@@ -2,7 +2,8 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+import math
+from dataclasses import dataclass, field
 from typing import Any
 
 
@@ -11,17 +12,20 @@ class ParkingSpot:
     """Object representing a parking spot."""
 
     spot_id: int
-    parking_type: str
-    street: str
-    traffic_sign: str
+    parking_type: str | None
+    street: str | None
+    traffic_sign: str | None
 
-    neighborhood: str
-    neighborhood_code: str
-    district: str
-    district_code: str
-    area: str
+    neighborhood: str | None
+    neighborhood_code: str | None
+    district: str | None
+    district_code: str | None
+    area: str | None
 
-    coordinates: list[float]
+    coordinates: list[list[float]]
+    asset_id: int | None = None
+    geometry: dict[str, Any] | None = None
+    source_attributes: dict[str, Any] = field(default_factory=dict)
 
     @classmethod
     def from_json(cls: type[ParkingSpot], data: dict[str, Any]) -> ParkingSpot:
@@ -49,4 +53,89 @@ class ParkingSpot:
             district_code=attr["WIJKCODE"],
             area=attr["GEBIED"],
             coordinates=geo,
+            asset_id=attr.get("ID"),
+            source_attributes=attr.copy(),
         )
+
+    @classmethod
+    def from_geojson(cls, feature: dict[str, Any]) -> ParkingSpot:
+        """Validate identity and polygon positions without discarding any rings."""
+        attributes = feature["properties"]
+        asset_id, object_id = attributes["ID"], attributes["OBJECTID"]
+        for value in (asset_id, object_id):
+            if isinstance(value, bool) or not isinstance(value, int) or value <= 0:
+                msg = "Invalid Arnhem record identity"
+                raise ValueError(msg)
+        if feature.get("type") != "Feature" or feature.get("id") != object_id:
+            msg = "Arnhem feature ID differs from OBJECTID"
+            raise ValueError(msg)
+        geometry = feature["geometry"]
+        if not isinstance(geometry, dict):
+            msg = "Missing Arnhem geometry"
+            raise TypeError(msg)
+        cls._validate_geometry(geometry)
+        coordinates = geometry["coordinates"]
+        exterior = (
+            coordinates[0] if geometry["type"] == "Polygon" else coordinates[0][0]
+        )
+        return cls(
+            spot_id=object_id,
+            asset_id=asset_id,
+            parking_type=attributes.get("SOORT"),
+            street=attributes.get("STRAAT"),
+            traffic_sign=attributes.get("RVV_SOORT"),
+            neighborhood=attributes.get("BUURTNAAM"),
+            neighborhood_code=attributes.get("BUURTCODE"),
+            district=attributes.get("WIJKNAAM"),
+            district_code=attributes.get("WIJKCODE"),
+            area=attributes.get("GEBIED"),
+            coordinates=exterior,
+            geometry=geometry,
+            source_attributes=attributes.copy(),
+        )
+
+    @staticmethod
+    def _validate_geometry(geometry: dict[str, Any]) -> None:
+        """Check all Polygon and MultiPolygon positions in WGS84."""
+        coordinates = geometry.get("coordinates")
+        if geometry.get("type") == "Polygon":
+            polygons = [coordinates]
+        elif geometry.get("type") == "MultiPolygon":
+            polygons = coordinates
+        else:
+            msg = "Expected an Arnhem Polygon or MultiPolygon"
+            raise ValueError(msg)
+        if not isinstance(polygons, list) or not polygons:
+            msg = "Empty Arnhem geometry"
+            raise ValueError(msg)
+        for polygon in polygons:
+            if not isinstance(polygon, list) or not polygon:
+                msg = "Empty Arnhem polygon"
+                raise ValueError(msg)
+            for ring in polygon:
+                if not isinstance(ring, list) or len(ring) < 4 or ring[0] != ring[-1]:
+                    msg = "Invalid Arnhem polygon ring"
+                    raise ValueError(msg)
+                for point in ring:
+                    if not isinstance(point, list) or len(point) != 2:
+                        msg = "Invalid Arnhem position"
+                        raise ValueError(msg)
+                    for value, bound in zip(point, (180, 90), strict=True):
+                        if (
+                            isinstance(value, bool)
+                            or not isinstance(value, (int, float))
+                            or not math.isfinite(value)
+                            or not -bound <= value <= bound
+                        ):
+                            msg = "Invalid Arnhem WGS84 coordinate"
+                            raise ValueError(msg)
+
+
+@dataclass
+class ParkingCollection:
+    """A selection verified against independent counts and original object IDs."""
+
+    records: list[ParkingSpot]
+    total_count: int
+    pages_fetched: int
+    complete: bool = True
