@@ -153,6 +153,7 @@ async def test_invalid_limits(kwargs: dict[str, Any]) -> None:
     [
         {"type": "Point", "coordinates": [5.9, 52]},
         {"type": "Polygon", "coordinates": []},
+        {"type": "MultiPolygon", "coordinates": []},
         {"type": "Polygon", "coordinates": [[]]},
         {"type": "Polygon", "coordinates": [[[5.9, 52]]]},
         {"type": "Polygon", "coordinates": [[[True, 52]] * 4]},
