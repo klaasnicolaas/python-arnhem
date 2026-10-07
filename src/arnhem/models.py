@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import math
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Any
 
 
@@ -12,17 +12,20 @@ class ParkingSpot:
     """Object representing a parking spot."""
 
     spot_id: int
-    parking_type: str
-    street: str
-    traffic_sign: str
+    parking_type: str | None
+    street: str | None
+    traffic_sign: str | None
 
-    neighborhood: str
-    neighborhood_code: str
-    district: str
-    district_code: str
-    area: str
+    neighborhood: str | None
+    neighborhood_code: str | None
+    district: str | None
+    district_code: str | None
+    area: str | None
 
-    coordinates: list[float]
+    coordinates: list[list[float]]
+    asset_id: int | None = None
+    geometry: dict[str, Any] | None = None
+    source_attributes: dict[str, Any] = field(default_factory=dict)
 
     @classmethod
     def from_json(cls: type[ParkingSpot], data: dict[str, Any]) -> ParkingSpot:
@@ -50,20 +53,12 @@ class ParkingSpot:
             district_code=attr["WIJKCODE"],
             area=attr["GEBIED"],
             coordinates=geo,
+            asset_id=attr.get("ID"),
+            source_attributes=attr.copy(),
         )
 
-
-@dataclass
-class ParkingRecord:
-    """An original asset ID, full WGS84 geometry and all source claims."""
-
-    spot_id: int
-    object_id: int
-    geometry: dict[str, Any]
-    source_attributes: dict[str, Any]
-
     @classmethod
-    def from_geojson(cls, feature: dict[str, Any]) -> ParkingRecord:
+    def from_geojson(cls, feature: dict[str, Any]) -> ParkingSpot:
         """Validate identity and polygon positions without discarding any rings."""
         attributes = feature["properties"]
         asset_id, object_id = attributes["ID"], attributes["OBJECTID"]
@@ -79,7 +74,25 @@ class ParkingRecord:
             msg = "Missing Arnhem geometry"
             raise TypeError(msg)
         cls._validate_geometry(geometry)
-        return cls(asset_id, object_id, geometry, attributes.copy())
+        coordinates = geometry["coordinates"]
+        exterior = (
+            coordinates[0] if geometry["type"] == "Polygon" else coordinates[0][0]
+        )
+        return cls(
+            spot_id=object_id,
+            asset_id=asset_id,
+            parking_type=attributes.get("SOORT"),
+            street=attributes.get("STRAAT"),
+            traffic_sign=attributes.get("RVV_SOORT"),
+            neighborhood=attributes.get("BUURTNAAM"),
+            neighborhood_code=attributes.get("BUURTCODE"),
+            district=attributes.get("WIJKNAAM"),
+            district_code=attributes.get("WIJKCODE"),
+            area=attributes.get("GEBIED"),
+            coordinates=exterior,
+            geometry=geometry,
+            source_attributes=attributes.copy(),
+        )
 
     @staticmethod
     def _validate_geometry(geometry: dict[str, Any]) -> None:
@@ -122,7 +135,7 @@ class ParkingRecord:
 class ParkingCollection:
     """A selection verified against independent counts and original object IDs."""
 
-    records: list[ParkingRecord]
+    records: list[ParkingSpot]
     total_count: int
     pages_fetched: int
     complete: bool = True

@@ -17,7 +17,7 @@ from .exceptions import (
     ODPArnhemError,
     ODPArnhemNoResultsError,
 )
-from .models import ParkingCollection, ParkingRecord, ParkingSpot
+from .models import ParkingCollection, ParkingSpot
 
 VERSION: str = metadata.version("arnhem")
 
@@ -211,7 +211,7 @@ class ODPArnhem:
             msg = "Arnhem selection exceeds the collection limit"
             raise ODPArnhemError(msg)
         ordered_ids = sorted(expected)
-        records: list[ParkingRecord] = []
+        records: list[ParkingSpot] = []
         pages = 0
         for offset in range(0, len(ordered_ids), page_size):
             batch = ordered_ids[offset : offset + page_size]
@@ -236,16 +236,16 @@ class ODPArnhem:
                 msg = "Incomplete Arnhem feature batch"
                 raise ODPArnhemError(msg)
             try:
-                parsed = [ParkingRecord.from_geojson(item) for item in features]
+                parsed = [ParkingSpot.from_geojson(item) for item in features]
             except (ValueError, TypeError, KeyError, AttributeError) as error:
                 msg = "Invalid Arnhem source record"
                 raise ODPArnhemError(msg) from error
-            if {item.object_id for item in parsed} != set(batch):
+            if {item.spot_id for item in parsed} != set(batch):
                 msg = "Arnhem batch object IDs differ"
                 raise ODPArnhemError(msg)
             records.extend(parsed)
             pages += 1
-        if len({item.spot_id for item in records}) != len(expected):
+        if len({item.asset_id for item in records}) != len(expected):
             msg = "Duplicate Arnhem asset IDs"
             raise ODPArnhemError(msg)
         if await self._selection_ids(set_filter) != expected:

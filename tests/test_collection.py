@@ -6,7 +6,7 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from arnhem import ODPArnhem, ODPArnhemError, ParkingRecord
+from arnhem import ODPArnhem, ODPArnhemError, ParkingSpot
 
 
 def feature(object_id: int = 1, asset_id: int = 1001) -> dict[str, Any]:
@@ -59,7 +59,11 @@ async def test_complete_batches_preserve_asset_identity_and_all_rings() -> None:
     assert result.total_count == 2
     assert result.pages_fetched == 2
     assert result.complete
-    assert [item.spot_id for item in result.records] == [1001, 1002]
+    assert [item.asset_id for item in result.records] == [1001, 1002]
+    assert [item.spot_id for item in result.records] == [1, 2]
+    assert result.records[0].coordinates == first["geometry"]["coordinates"][0]
+    assert result.records[0].traffic_sign == "E6a"
+    assert result.records[0].street is None
     assert result.records[0].geometry == first["geometry"]
     assert result.records[0].source_attributes == first["properties"]
     params = request.call_args_list[2].kwargs["params"]
@@ -169,7 +173,7 @@ async def test_invalid_limits(kwargs: dict[str, Any]) -> None:
 def test_invalid_geometry(change: dict[str, Any]) -> None:
     """Reject invalid WGS84 positions and unclosed rings."""
     with pytest.raises(ValueError, match="Arnhem"):
-        ParkingRecord.from_geojson({**feature(), "geometry": change})
+        ParkingSpot.from_geojson({**feature(), "geometry": change})
 
 
 @pytest.mark.parametrize(
@@ -181,7 +185,7 @@ def test_invalid_source_ids(field: str, value: object) -> None:
     source = feature()
     source["properties"][field] = value
     with pytest.raises(ValueError, match="Arnhem"):
-        ParkingRecord.from_geojson(source)
+        ParkingSpot.from_geojson(source)
 
 
 def test_multipolygon_keeps_every_polygon_and_rejects_wrapper_mismatch() -> None:
@@ -194,7 +198,7 @@ def test_multipolygon_keeps_every_polygon_and_rejects_wrapper_mismatch() -> None
             source["geometry"]["coordinates"],
         ],
     }
-    assert ParkingRecord.from_geojson(source).geometry == source["geometry"]
+    assert ParkingSpot.from_geojson(source).geometry == source["geometry"]
     source["id"] = 2
     with pytest.raises(ValueError, match="OBJECTID"):
-        ParkingRecord.from_geojson(source)
+        ParkingSpot.from_geojson(source)

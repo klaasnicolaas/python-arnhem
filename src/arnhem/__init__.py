@@ -6,7 +6,7 @@ from .exceptions import (
     ODPArnhemError,
     ODPArnhemNoResultsError,
 )
-from .models import ParkingCollection, ParkingRecord, ParkingSpot
+from .models import ParkingCollection, ParkingSpot
 
 __all__ = [
     "ODPArnhem",
@@ -14,6 +14,5 @@ __all__ = [
     "ODPArnhemError",
     "ODPArnhemNoResultsError",
     "ParkingCollection",
-    "ParkingRecord",
     "ParkingSpot",
 ]
