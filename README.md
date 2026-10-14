@@ -82,6 +82,10 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
+## Complete parking collections
+
+Use `await client.parking_collection(set_filter="RVV_SOORT='E6a'")` for a complete selection. Records expose the original asset `ID` as `id`. See the [collection API](docs/collections.md) for result fields, source identifiers and validation.
+
 ## Use cases
 
 [NIPKaart.nl][nipkaart]
@@ -208,7 +212,3 @@ SOFTWARE.
 [prek]: https://github.com/j178/prek
 [scorecard-shield]: https://api.scorecard.dev/projects/github.com/klaasnicolaas/python-arnhem/badge
 [scorecard-url]: https://scorecard.dev/viewer/?uri=github.com/klaasnicolaas/python-arnhem
-
-## Record identity migration
-
-Use `record.id` for the original asset `ID` (formerly `asset_id`). `spot_id` is removed; its ArcGIS `OBJECTID` remains in `source_attributes["OBJECTID"]` and still controls retrieval completeness, not consumer identity. The identifier value and type, selection, geometry and original source claims are preserved. This public record API change requires a major release; no compatibility alias is introduced. The field `id` is valid as a Python dataclass attribute and does not replace the builtin `id()` function.
