@@ -51,7 +51,7 @@ You get the following output data back with this python package:
 
 | Variable | Type | Description |
 | :------- | :--- | :---------- |
-| `spot_id` | string | The id of the parking spot |
+| `id` | integer or null | Original asset `ID`; ArcGIS `OBJECTID` stays in `source_attributes` |
 | `parking_type` | string | The type of parking spot |
 | `street` | string | The street where the parking spot is located |
 | `traffic_sign` | string | The traffic sign at the parking spot |
@@ -81,6 +81,10 @@ async def main() -> None:
 if __name__ == "__main__":
     asyncio.run(main())
 ```
+
+## Complete parking collections
+
+Use `await client.parking_collection(set_filter="RVV_SOORT='E6a'")` for a complete selection. Records expose the original asset `ID` as `id`. See the [collection API](docs/collections.md) for result fields, source identifiers and validation.
 
 ## Use cases
 

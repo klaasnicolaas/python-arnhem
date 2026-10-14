@@ -59,8 +59,8 @@ async def test_complete_batches_preserve_asset_identity_and_all_rings() -> None:
     assert result.total_count == 2
     assert result.pages_fetched == 2
     assert result.complete
-    assert [item.asset_id for item in result.records] == [1001, 1002]
-    assert [item.spot_id for item in result.records] == [1, 2]
+    assert [item.id for item in result.records] == [1001, 1002]
+    assert [item.source_attributes["OBJECTID"] for item in result.records] == [1, 2]
     assert result.records[0].coordinates == first["geometry"]["coordinates"][0]
     assert result.records[0].traffic_sign == "E6a"
     assert result.records[0].street is None
