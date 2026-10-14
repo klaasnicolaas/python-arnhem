@@ -11,7 +11,7 @@ from typing import Any
 class ParkingSpot:
     """Object representing a parking spot."""
 
-    spot_id: int
+    id: int | None
     parking_type: str | None
     street: str | None
     traffic_sign: str | None
@@ -23,7 +23,6 @@ class ParkingSpot:
     area: str | None
 
     coordinates: list[list[float]]
-    asset_id: int | None = None
     geometry: dict[str, Any] | None = None
     source_attributes: dict[str, Any] = field(default_factory=dict)
 
@@ -43,7 +42,7 @@ class ParkingSpot:
         attr = data["attributes"]
         geo = data["geometry"].get("rings")[0]
         return cls(
-            spot_id=attr["OBJECTID"],
+            id=attr.get("ID"),
             parking_type=attr["SOORT"],
             street=attr["STRAAT"],
             traffic_sign=attr["RVV_SOORT"],
@@ -53,7 +52,6 @@ class ParkingSpot:
             district_code=attr["WIJKCODE"],
             area=attr["GEBIED"],
             coordinates=geo,
-            asset_id=attr.get("ID"),
             source_attributes=attr.copy(),
         )
 
@@ -79,8 +77,7 @@ class ParkingSpot:
             coordinates[0] if geometry["type"] == "Polygon" else coordinates[0][0]
         )
         return cls(
-            spot_id=object_id,
-            asset_id=asset_id,
+            id=asset_id,
             parking_type=attributes.get("SOORT"),
             street=attributes.get("STRAAT"),
             traffic_sign=attributes.get("RVV_SOORT"),

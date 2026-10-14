@@ -240,12 +240,12 @@ class ODPArnhem:
             except (ValueError, TypeError, KeyError, AttributeError) as error:
                 msg = "Invalid Arnhem source record"
                 raise ODPArnhemError(msg) from error
-            if {item.spot_id for item in parsed} != set(batch):
+            if {item.source_attributes["OBJECTID"] for item in parsed} != set(batch):
                 msg = "Arnhem batch object IDs differ"
                 raise ODPArnhemError(msg)
             records.extend(parsed)
             pages += 1
-        if len({item.asset_id for item in records}) != len(expected):
+        if len({item.id for item in records}) != len(expected):
             msg = "Duplicate Arnhem asset IDs"
             raise ODPArnhemError(msg)
         if await self._selection_ids(set_filter) != expected:

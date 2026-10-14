@@ -3,7 +3,6 @@
   list([
     ParkingSpot(
       area='Sector C Burgermeesterkwartier',
-      asset_id=100077,
       coordinates=list([
         list([
           5.894436974354539,
@@ -145,6 +144,7 @@
       district=None,
       district_code='WK020212',
       geometry=None,
+      id=100077,
       neighborhood='Burgemeesterswijk',
       neighborhood_code='BU02021261',
       parking_type='bijzonder',
@@ -167,13 +167,11 @@
         'WIJKCODE': 'WK020212',
         'WIJKNAAM': None,
       }),
-      spot_id=96,
       street='G.A. van Nispenstraat',
       traffic_sign='E6a',
     ),
     ParkingSpot(
       area='26001',
-      asset_id=108123,
       coordinates=list([
         list([
           5.901505793265879,
@@ -207,6 +205,7 @@
       district=None,
       district_code='WK020201',
       geometry=None,
+      id=108123,
       neighborhood='Stationsplein',
       neighborhood_code='BU02020104',
       parking_type='bijzonder',
@@ -229,13 +228,11 @@
         'WIJKCODE': 'WK020201',
         'WIJKNAAM': None,
       }),
-      spot_id=105,
       street='Coehoornstraat',
       traffic_sign='E6a',
     ),
     ParkingSpot(
       area='Sector C Burgermeesterkwartier',
-      asset_id=108451,
       coordinates=list([
         list([
           5.893895836335086,
@@ -261,6 +258,7 @@
       district=None,
       district_code='WK020212',
       geometry=None,
+      id=108451,
       neighborhood='Burgemeesterswijk',
       neighborhood_code='BU02021261',
       parking_type='bijzonder',
@@ -283,13 +281,11 @@
         'WIJKCODE': 'WK020212',
         'WIJKNAAM': None,
       }),
-      spot_id=300,
       street='Van Lawick van Pabststraat',
       traffic_sign='E6a',
     ),
     ParkingSpot(
       area='26001',
-      asset_id=106970,
       coordinates=list([
         list([
           5.902766117364105,
@@ -315,6 +311,7 @@
       district=None,
       district_code='WK020201',
       geometry=None,
+      id=106970,
       neighborhood='Rijnstraat',
       neighborhood_code='BU02020102',
       parking_type='bijzonder',
@@ -337,13 +334,11 @@
         'WIJKCODE': 'WK020201',
         'WIJKNAAM': None,
       }),
-      spot_id=309,
       street='Nieuwe Plein',
       traffic_sign='E6a',
     ),
     ParkingSpot(
       area='Sector C Burgermeesterkwartier',
-      asset_id=108450,
       coordinates=list([
         list([
           5.893853776972709,
@@ -377,6 +372,7 @@
       district=None,
       district_code='WK020212',
       geometry=None,
+      id=108450,
       neighborhood='Burgemeesterswijk',
       neighborhood_code='BU02021261',
       parking_type='bijzonder',
@@ -399,13 +395,11 @@
         'WIJKCODE': 'WK020212',
         'WIJKNAAM': None,
       }),
-      spot_id=756,
       street='Van Lawick van Pabststraat',
       traffic_sign='E6a',
     ),
     ParkingSpot(
       area='26001',
-      asset_id=106436,
       coordinates=list([
         list([
           5.898927588531049,
@@ -439,6 +433,7 @@
       district=None,
       district_code='WK020201',
       geometry=None,
+      id=106436,
       neighborhood='Utrechtsestraat',
       neighborhood_code='BU02020170',
       parking_type='bijzonder',
@@ -461,13 +456,11 @@
         'WIJKCODE': 'WK020201',
         'WIJKNAAM': None,
       }),
-      spot_id=807,
       street='Oude Kraan',
       traffic_sign='E6a',
     ),
     ParkingSpot(
       area='26001',
-      asset_id=108096,
       coordinates=list([
         list([
           5.899032949763431,
@@ -573,6 +566,7 @@
       district=None,
       district_code='WK020201',
       geometry=None,
+      id=108096,
       neighborhood='Utrechtsestraat',
       neighborhood_code='BU02020170',
       parking_type='bijzonder',
@@ -595,13 +589,11 @@
         'WIJKCODE': 'WK020201',
         'WIJKNAAM': None,
       }),
-      spot_id=1170,
       street='Stationsplein',
       traffic_sign='E6a',
     ),
     ParkingSpot(
       area='26001',
-      asset_id=108097,
       coordinates=list([
         list([
           5.899068282607165,
@@ -711,6 +703,7 @@
       district=None,
       district_code='WK020201',
       geometry=None,
+      id=108097,
       neighborhood='Utrechtsestraat',
       neighborhood_code='BU02020170',
       parking_type='bijzonder',
@@ -733,13 +726,11 @@
         'WIJKCODE': 'WK020201',
         'WIJKNAAM': None,
       }),
-      spot_id=1305,
       street='Stationsplein',
       traffic_sign='E6a',
     ),
     ParkingSpot(
       area='26001',
-      asset_id=106159,
       coordinates=list([
         list([
           5.900772747190894,
@@ -765,6 +756,7 @@
       district=None,
       district_code='WK020201',
       geometry=None,
+      id=106159,
       neighborhood='Stationsplein',
       neighborhood_code='BU02020104',
       parking_type='bijzonder',
@@ -787,13 +779,11 @@
         'WIJKCODE': 'WK020201',
         'WIJKNAAM': None,
       }),
-      spot_id=1367,
       street='Rijnkade',
       traffic_sign='E6a',
     ),
     ParkingSpot(
       area='26001',
-      asset_id=108689,
       coordinates=list([
         list([
           5.902915226028621,
@@ -819,6 +809,7 @@
       district=None,
       district_code='WK020201',
       geometry=None,
+      id=108689,
       neighborhood='Rijnstraat',
       neighborhood_code='BU02020102',
       parking_type='bijzonder',
@@ -841,7 +832,6 @@
         'WIJKCODE': 'WK020201',
         'WIJKNAAM': None,
       }),
-      spot_id=2219,
       street='Nieuwe Plein',
       traffic_sign='E6a',
     ),
