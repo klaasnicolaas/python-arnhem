@@ -9,7 +9,7 @@ from arnhem import ODPArnhem
 
 
 @pytest.fixture(name="odp_arnhem_client")
-async def client() -> AsyncGenerator[ODPArnhem, None]:
+async def client() -> AsyncGenerator[ODPArnhem]:
     """Fixture for the Open Data Platform API of Arnhem client."""
     async with (
         ClientSession() as session,
